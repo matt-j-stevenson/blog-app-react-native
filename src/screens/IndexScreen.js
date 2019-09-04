@@ -12,13 +12,12 @@ import { Feather } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 
 const IndexScreen = ({ navigation }) => {
-  const { state, addBlogPost, deleteBlogPost } = useContext(Context);
+  const { state, deleteBlogPost } = useContext(Context);
 
   return (
     <View>
       {/* An arrow function that just calls another function, instead
       We can just call the function without the parans */}
-      <Button title="New Blog" onPress={addBlogPost} />
       <FlatList
         data={state}
         keyExtractor={blogPost => blogPost.title}
